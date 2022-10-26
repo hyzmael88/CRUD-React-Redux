@@ -1,0 +1,11 @@
+instale json-server
+npm install json-server
+cree el archivo db.json
+en la terminar le digo cual es el archivo js-server db.json --port 4000
+
+instalamos redux
+npm i react-redux redux redux-thunk
+react-redux => trae funciones para conectar react con redux
+redux => libreria de redux
+redux-thunk una forma de usar funciones asincronas 
+apartir de la version 7 usa hooks, antes no usaban
