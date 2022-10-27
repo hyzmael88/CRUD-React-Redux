@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 //useDispatch nos sirve para mandar ejecturar las acciones
 //useSelector es una forma en la que vamos a acceder al state dentro del componente
 
@@ -9,9 +10,18 @@ import { crearNuevoProductoAction } from "../actions/productoActions";
 
 function NuevoProducto() {
 
+  const navigate = useNavigate();
+
     //state del componente
     const [nombre, setNombre] = useState('');
     const [precio, setPrecio] = useState(0)
+
+    //acceder al state del store
+    //para ver que hay dentro del state
+    //const cargando = useSelector((state) => state)
+    const cargando = useSelector((state) => state.productos.loading)
+    const error = useSelector((state) => state.productos.error)
+    console.log(cargando)
 
   //utilizar use dispatch y te cre una funcion
   const dispatch = useDispatch();
@@ -33,6 +43,8 @@ function NuevoProducto() {
     agregarProducto({
         nombre,precio
     });
+    //redireccionar
+    navigate('/');
   };
   return (
     <div className="row justify-content-center">
@@ -72,6 +84,8 @@ function NuevoProducto() {
                 Agregar
               </button>
             </form>
+            {cargando? <p>Cargando..</p> :null}
+            {error? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p>:null}
           </div>
         </div>
       </div>

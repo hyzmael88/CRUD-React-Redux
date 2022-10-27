@@ -1,19 +1,14 @@
 {
-  "posts": [
+  "productos": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombre": "Jugo de Zanahoria",
+      "precio": "31111"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "Jugo de Fresa",
+      "precio": "200",
+      "id": 5
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
